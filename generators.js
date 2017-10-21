@@ -23,7 +23,22 @@ register(rectangle, "Example", "example");
 
 
 //*************************************************
-
+function MyIdea001(){
+push();
+	translate(width / 2, height / 2);
+	beginShape();
+	var a = 0;
+	for(var i = 0; i < TWO_PI; i += TWO_PI / 200){
+		var radius = r + abs(sin(a * 0.25) * 10) + map(noise(a * 0.25), 0, 1, -10, 10)
+		var x = radius * 1.5 * cos(i);
+		var y = radius * sin(i);
+		a++;
+		vertex(x, y);
+	}
+	endShape(CLOSE);
+	pop();
+};
+register(MyIdea001, "I Dont Know", "I Dont Know");
 function ellipseCloud() {
   const circleRadius = width / 8;
 
